@@ -1,0 +1,15 @@
+<div class="form-group position-relative">
+  <label class="form-label">{{ label }}</label>
+
+  <input 
+    [type]="type" 
+    (blur)="onTouchedCb($event.target.value);" 
+    [ngClass]="cssClass" 
+    [placeholder]="placeholder"
+    class="form-control" 
+    [readonly]="isReadOnly" 
+    [(ngModel)]="value" 
+    [class.is-invalid]="control.invalid && control.touched && control.dirty">
+    
+  <app-input-error [control]="control" [label]="label"></app-input-error>
+</div>

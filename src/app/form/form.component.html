@@ -1,0 +1,32 @@
+<h3>Formulário de testes</h3>
+<hr>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-input 
+    label="Nome" 
+    id="nome" 
+    placeholder="Informe seu Nome" 
+    formControlName="nome"
+    [control]="form.get('nome')"
+    [cssClass]="cssErrors('nome')">
+  </app-input>
+
+  <app-input 
+    label="E-mail" 
+    id="email" 
+    placeholder="Informe seu E-mail" 
+    formControlName="email"
+    [control]="form.get('email')"
+    [cssClass]="cssErrors('email')">
+  </app-input>
+
+  <app-input 
+    type="date"
+    label="Data de nascimento" 
+    id="dataNascimento" 
+    formControlName="dataNascimento"
+    [control]="form.get('dataNascimento')"
+    [cssClass]="cssErrors('dataNascimento')">
+  </app-input>
+</form>
+
+<app-form-debug [form]="form"></app-form-debug>
